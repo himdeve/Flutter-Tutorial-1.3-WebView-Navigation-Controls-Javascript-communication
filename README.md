@@ -8,5 +8,8 @@ Welcome to Himdeve development, where we are preparing the best tutorials to mak
 
 2. In addition, we will learn how to communicate directly with the javascript page loaded in WebView, how to write and call javascript for WebView in Flutter.
 
-## Link
+## Tutorial en
+https://himdeve.com/flutter-tutorials/flutter-tutorial-1-3-webview-navigation-controls-javascript-communication/
+
+## Tutorial sk/cz
 https://himdeve.com/flutter-sk-cz-tutorialy/flutter-tutorial-1-3-webview-navigation-controls-javascript-communication
