@@ -41,11 +41,11 @@ class _ShopPageState extends State<ShopPage> {
       onWebViewCreated: (WebViewController webViewController) {
         _controller.complete(webViewController);
       },
-      navigationDelegate: (action) {
-        return _buildNavigationDecision(action);
+      navigationDelegate: (request) {
+        return _buildNavigationDecision(request);
       },
       javascriptChannels: <JavascriptChannel>[
-        _topBarJsChannel(),
+        _createTopBarJsChannel(),
       ].toSet(),
       onPageFinished: (url) {
         _showPageTitle();
@@ -53,8 +53,8 @@ class _ShopPageState extends State<ShopPage> {
     );
   }
 
-  NavigationDecision _buildNavigationDecision(NavigationRequest action) {
-    if (action.url.contains('my-account')) {
+  NavigationDecision _buildNavigationDecision(NavigationRequest request) {
+    if (request.url.contains('my-account')) {
       globalKey.currentState.showSnackBar(
         SnackBar(
           content: Text(
@@ -116,7 +116,7 @@ class _ShopPageState extends State<ShopPage> {
     });
   }
 
-  JavascriptChannel _topBarJsChannel() {
+  JavascriptChannel _createTopBarJsChannel() {
     return JavascriptChannel(
       name: 'TopBarJsChannel',
       onMessageReceived: (JavascriptMessage message) {
